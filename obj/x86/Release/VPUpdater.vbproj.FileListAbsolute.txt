@@ -1,0 +1,13 @@
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Release\ResolveAssemblyReference.cache
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Release\GenerateResource.read.1.tlog
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Release\GenerateResource.write.1.tlog
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Release\Interop.Shell32.dll
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Release\VPUpdater.vbproj.ResolveComReference.cache
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Release\VPUpdater.pdb
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\bin\Release\VPUpdater.exe
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\bin\Release\VPUpdater.pdb
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\bin\Release\VPUpdater.xml
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Release\VPUpdater.frmMain.resources
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Release\VPUpdater.Resources.resources
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Release\VPUpdater.exe
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Release\VPUpdater.xml

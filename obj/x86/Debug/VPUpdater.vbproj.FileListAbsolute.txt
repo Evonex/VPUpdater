@@ -1,0 +1,13 @@
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Debug\GenerateResource.read.1.tlog
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Debug\GenerateResource.write.1.tlog
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\bin\Debug\VPUpdater.exe
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\bin\Debug\VPUpdater.pdb
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\bin\Debug\VPUpdater.xml
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Debug\VPUpdater.exe
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Debug\VPUpdater.xml
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Debug\VPUpdater.pdb
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Debug\Interop.Shell32.dll
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Debug\VPUpdater.vbproj.ResolveComReference.cache
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Debug\VPUpdater.frmMain.resources
+G:\Users\Chris\Documents\Visual Studio 2010\Projects\VPUpdater\VPUpdater\obj\x86\Debug\VPUpdater.Resources.resources
