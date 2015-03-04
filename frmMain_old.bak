@@ -5,7 +5,7 @@
 '╚════════════════════════════════════════════════════════════╝
 
 'Future Ideas:      Use command string for args or an INI file.
-'You can add        Download and use 7z version instead of zip.
+'you can add        Download and use 7z version instead of zip.
 '                   Better GUI with everything in one window.
 '                   Support VPUpdater being included with the downloaded update
 '                   Self-update
@@ -16,7 +16,9 @@ Imports System.Io
 Public Class frmMain
     '--- Configure main options here ---
     Private Const VersionURL As String = "http://virtualparadise.org/version.txt" 'URL to get the new version string. Length of this string will also be used to find the offset.
-    Private Const DownloadURL As String = "http://virtualparadise.org/downloads/virtualparadise_{newVersion}_windows_x86.zip" 'URL to download new version zip. {newVersion} will be replaced with the version number.
+    Private Const DownloadURL As String = "http://virtualparadise.org/downloads/virtualparadise_{newVersion}_windows_x86.zip" 'URL to download new version zip. {newVersion} will be replaced with the same string.
+    Private Const ExeFindString As String = "Virtual Paradise " 'String to find in EXE where the version string is expected following it
+
     Private Sub frmMain_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         'Download the file from the webserver containing latest version
@@ -31,13 +33,35 @@ Public Class frmMain
         End Try
 
         'Get current version
-        curVersion = System.Diagnostics.FileVersionInfo.GetVersionInfo(Application.StartupPath & "\VirtualParadise.exe").FileVersion.ToString
+        If File.Exists(Application.StartupPath & "\vp.version") = True Then
+            'Exising file from previous checks
+            curVersion = My.Computer.FileSystem.ReadAllText(Application.StartupPath & "\vp.version")
+        Else
+            curVersion = System.Diagnostics.FileVersionInfo.GetVersionInfo(Application.StartupPath & "\VirtualParadise.exe").FileVersion.ToString 'have it only need to contain or match the start
+#If False Then 'Old pre-0.3.46 method of checking version
+            If curVersion = "" Then 'comment out irrelevant code, make more constants for other programs
+                'New VP Updater installation, extract the version string from the VP exe
+                Dim vpExe As String = File.ReadAllText(Application.StartupPath & "\VirtualParadise.exe")
+                Dim index As Integer = vpExe.IndexOf(ExeFindString)
+                If index > 0 Then
+                    curVersion = vpExe.Substring(index + ExeFindString.Length, newVersion.Length) : GoTo FoundVersion
+                End If
+            Else
+                GoTo FoundVersion
+            End If
+            MsgBox("Failed to find version string in VirtualParadise.exe, running existing version. Check for a new release of VPUpdater.", vbCritical + vbOK, "Error")
+#End If
+            GoTo RunInstalledVersion
+FoundVersion:
+        End If
+        'Write new version to file
+        WriteTextFile(Application.StartupPath & "\vp.version", newVersion)
 
         'Alert the user of a new version, allow them the option of bypassing update
-        If curVersion.Contains(newVersion) Then
-            GoTo RunInstalledVersion
-        Else
+        If curVersion <> newVersion Then
             If MsgBox("New version available. Update to latest version " & newVersion & "?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "VP Updater") <> vbYes Then GoTo RunInstalledVersion
+        Else
+            GoTo RunInstalledVersion
         End If
 
         Try 'Delete existing update.zip
@@ -60,6 +84,9 @@ Public Class frmMain
             My.Computer.FileSystem.DeleteFile(Application.StartupPath & "\update.zip")
         Catch ex As Exception
         End Try
+
+        'Write new version to file
+        WriteTextFile(Application.StartupPath & "\vp.version", newVersion)
 
 RunInstalledVersion:
         If System.Environment.CommandLine.Contains(" ") Then
@@ -94,5 +121,12 @@ RunInstalledVersion:
         Dim input As Shell32.Folder = sc.NameSpace(inputZip)
         'Extract the files from the zip file using the CopyHere command .
         output.CopyHere(input.Items, 16) 'Copy files. 16 = Yes to All (on replacing files)
+    End Sub
+
+    Private Sub WriteTextFile(ByVal path As String, ByVal value As String)
+        Dim sr As StreamWriter
+        sr = New StreamWriter(path)
+        sr.Write(value)
+        sr.Close()
     End Sub
 End Class
